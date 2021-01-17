@@ -1,26 +1,370 @@
 
+html, body, div, span, applet, object, iframe, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, legend, table, caption, tbody, tfoot, thead, article, aside, canvas, details, embed, figure, figcaption, footer, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
 body{
     margin:0;
     font-family: sans-serif;
+}
+label{
+    font-size:18px;
+    padding:10px;
+    padding-bottom: 0;
+}
+h1{
+ padding:none;
+ margin-top: 5px;
+ margin-bottom: none;
+}
+h2{
+    display: inline;
+    font-size: 20px;
+    color: navy;
+}
+.images{
+    width:30px;
+    height:30px;
+}
+.imageLabels{
+    position: relative;
+    display:inline;
+    margin:auto;
+    color:blue;
+}
+.wallImage{
+    position: relative;
+    width: 30px;
+    height:30px;
+    background-color: #333333;
+    display: inline-table;
+    border: 1px black solid;
+}
+.checkedImage{
+    position: relative;
+    width: 30px;
+    height:30px;
+    background-color: green;
+    display: inline-table;
+    border: 1px black solid;
+}
+.uncheckedImage{
+    position: relative;
+    width: 30px;
+    height:30px;
+    background-color: white;
+    display: inline-table;
+    border: 1px black solid;
+}
+.shortestPathImage{
+    position: relative;
+    width: 30px;
+    height:30px;
+    background-color: yellow;
+    display: inline-table;
+    border: 1px black solid;
+}
+.modal{
+    display: none; 
+    z-index: 2; 
+    margin:auto;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height:50%;
+    overflow: auto;
+    border: 1px solid black;
+}
+.modal-content {
+    background-color: #fefefe;
+    border: 1px solid #888;
+    padding:10px;
+    height:100%;
+  }
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 table{
     width:100%;
     border-collapse:collapse;
 }
 td{
-    height:21px;
+    height:24px;
     position:relative;
-    border: 1px solid black;
+    border: 1px solid lightblue;
 }
-
-
 .tDiv{
     margin-right:10px;
     margin-left:10px;
+    padding-top: 10px;
 }
 .trDiv{
     width: 2%;
 }
 button{
-    padding:10px;
+    padding:13px;
+    border-radius:12px;
+    background-color:#2196F3;
+    
 }
+button:focus { outline: none; }
+button:active{
+	padding:13px;
+    border-radius:12px;
+    background-color:#2196F3;
+}
+@keyframes stretch {
+    0%{
+        background-color: yellow;
+      }
+    100%{
+        background-color: green;
+    }
+}
+.weightedNode{
+    background-image: url('assets/Images/kettlebell.png');
+    background-size: contain;
+background-position:50% 50%;
+background-repeat: no-repeat;
+}
+.checkedWeightedNode{
+    background-image: url('assets/Images/kettlebell.png');
+    background-size: contain;
+    background-position:50% 50%;
+    background-repeat: no-repeat;
+    animation-name: stretch;
+    animation-timing-function: ease-out; 
+    animation-delay: 0s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+}
+.shortestPathWeightedNode{
+    background-image: url('assets/Images/kettlebell.png'); 
+background-size: contain;
+background-position:50% 50%;
+background-repeat: no-repeat;
+background-color: yellow;
+}
+.checked{
+
+    animation-name: stretch;
+    animation-timing-function: ease-out; 
+    animation-delay: 0s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+
+}
+.checkedEnd{
+    background-image: url('assets/Images/target-icon-4509.png');
+    background-size: contain;
+background-position:50% 50%;
+background-repeat: no-repeat;
+    animation-name: stretch;
+    animation-timing-function: ease-out; 
+    animation-delay: 0s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+}
+.shortestPathEnd{
+background-image: url('assets/Images/target-icon-4509.png'); 
+background-size: contain;
+background-position:50% 50%;
+background-repeat: no-repeat;
+background-color: yellow;
+}
+.start{
+background-image: url('assets/Images/start.png'); 
+background-size: contain;
+background-position:50% 50%;
+background-repeat: no-repeat;
+}
+.shortestPathStart{
+background-image: url('assets/Images/start.png'); 
+background-size: contain;
+background-position:50% 50%;
+background-repeat: no-repeat;
+background-color: yellow;
+
+}
+.end{
+background-image: url('assets/Images/target-icon-4509.png'); 
+background-size: contain;
+background-position:50% 50%;
+background-repeat: no-repeat;
+    
+}
+.shortestPath{
+    background-color: yellow;
+}
+.wall{
+    background-color: #333333;
+    border: solid #333333 1px;
+}
+header{
+    padding-top: 10px;
+    background-color: lightblue;
+    padding-bottom: 10px;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+.custom-select-wrapper {
+    display: inline-block;
+    position: relative;
+    -webkit-user-select: none;
+            user-select: none;
+    width: 20%;
+    padding-right: 10px;
+}
+.custom-select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-width: 0 2px 0 2px;
+    border-style: solid;
+    border-color: #394a6d;
+}
+.default{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #3b3b3b;
+    height: 60px;
+    line-height: 60px;
+    background: #ffffff;
+    cursor: pointer;
+    border-width: 2px 0 2px 0;
+    border-style: solid;
+    border-color: #394a6d;
+}
+.custom-select__trigger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #3b3b3b;
+    height: 60px;
+    line-height: 60px;
+    background: #ffffff;
+    cursor: pointer;
+    border-width: 2px 0 2px 0;
+    border-style: solid;
+    border-color: #394a6d;
+}
+.custom-options {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 2px solid #394a6d;
+    border-top: 0;
+    background: #fff;
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 2;
+}
+.custom-select.open .custom-options {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+.custom-option {
+    position: relative;
+    display: block;
+    padding: 0 22px 0 22px;
+    font-size: 22px;
+    font-weight: 300;
+    color: #3b3b3b;
+    line-height: 60px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.custom-option:hover {
+    cursor: pointer;
+    background-color: #b2b2b2;
+}
+.custom-option.selected {
+    color: #ffffff;
+    background-color: #305c91;
+}
+.arrow {
+    position: relative;
+    height: 15px;
+    width: 15px;
+}
+.arrow::before, .arrow::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    width: 0.15rem;
+    height: 100%;
+    transition: all 0.5s;
+}
+.arrow::before {
+    left: -5px;
+    transform: rotate(45deg);
+    background-color: #394a6d;
+}
+.arrow::after {
+    left: 5px;
+    transform: rotate(-45deg);
+    background-color: #394a6d;
+}
+.open .arrow::before {
+    left: -5px;
+    transform: rotate(-45deg);
+}
+.open .arrow::after {
+    left: 5px;
+    transform: rotate(45deg);
+}
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+
+/*# sourceMappingURL=styles.css.map*/
