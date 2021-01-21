@@ -82,11 +82,11 @@ h2{
     border: 1px solid black;
 }
 .modal-content {
-    overflow:auto;
-    background-color: #fefefe;
-    border: 1px solid #888;
     padding:10px;
     height:100%;
+  overflow:auto;
+   background-color: #fefefe;
+    border: 1px solid #888;
   
   }
 .close {
