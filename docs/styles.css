@@ -77,7 +77,7 @@ h2{
     top: 50%;
     transform: translate(-50%, -50%);
     width: 50%;
-    height:50%;
+    height:65%;
     overflow: auto;
     border: 1px solid black;
 }
