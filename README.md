@@ -1,4 +1,4 @@
-Pathfinding Visualizer
+Pathfinding Visualizer - https://chennyyun.github.io/Pathfinding-Visualizer/
 
 Dijkstras (weighted) - finds shortest path by finding the next node with the smallest cost and repeating this process until the target is reached (guarentees the shortest path)
 A* (weighted) - similar to Dijkstras, but utilizes heuristics to find the shortest path much faster than Dijkstras (guarentees the shortest path)
